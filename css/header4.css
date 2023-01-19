@@ -1,0 +1,8 @@
+.header {
+    background-color: teal;
+    margin: auto 20px;
+    padding: 10px;
+}
+.header__h1 {
+    color: whitesmoke;
+}
