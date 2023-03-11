@@ -2,6 +2,9 @@
     background-color: teal;
     margin: auto 20px;
     padding: 10px;
+    border:solid;
+    border-color: rgb(0,77,77);
+    border-bottom: none;
 }
 .header__h1 {
     color: whitesmoke;
