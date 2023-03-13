@@ -1,35 +1,44 @@
-console.log("hi")
+{
+    const calculateResult = (sum, currency) => {
+        const rateJPY = 0.034;
+        const rateUSD = 4.33;
+        const rateEUR = 4.69;
+        switch (currency) {
+            case "JPY":
+                return sum / rateJPY;
 
-let formElement = document.querySelector(".js-form");
-let currencyElement = document.querySelector(".js-currency");
-let sumElement = document.querySelector(".js-sum");
-let resultElement = document.querySelector(".js-result");
+            case "USD":
+                return sum / rateUSD;
 
-let rateJPY = 0.034
-let rateUSD = 4.33
-let rateEUR = 4.69
-
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    let sum = +sumElement.value;
-    let currency = currencyElement.value;
-
-    let result
-    switch (currency) {
-        case "JPY":
-            result = sum / rateJPY;
-            break
-
-        case "USD":
-            result = sum / rateUSD;
-            break
-
-        case "EUR":
-            result = sum / rateEUR;
+            case "EUR":
+                return sum / rateEUR;
+        };
     }
 
-    resultElement.innerHTML = `${sum.toFixed(2)
-        } PLN = ${result.toFixed(2)} ${currency}`;
+    const updateResultText = (sum, result, currency) => {
+        const resultElement = document.querySelector(".js-result");
+        resultElement.innerHTML = `${sum.toFixed(2) } PLN = ${result.toFixed(2)} ${currency}`;
+    };
 
-});
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+
+        const currencyElement = document.querySelector(".js-currency");
+        const sumElement = document.querySelector(".js-sum");
+
+        const sum = +sumElement.value;
+        const currency = currencyElement.value;
+
+        const result = calculateResult(sum, currency);
+
+        updateResultText(sum, result, currency);
+    };
+
+
+    const init = () => {
+        const formElement = document.querySelector(".js-form");
+
+        formElement.addEventListener("submit", onFormSubmit);
+    };
+    init();
+}
