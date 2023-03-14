@@ -8,15 +8,16 @@ html {
 
 .body {
     max-width: 800px;
+    min-height: 100vh;
     background-image: url("../images/moneyTło.jpg");
     background-position: center;
     background-size: cover;
-    margin: auto;
+    margin: auto; 
 }
 
-.main {
-    margin: auto 20px;
+.main {  
     padding: 10px;
+    margin: auto 20px;
     background-color: rgb(223, 223, 223);
     border: solid;
     border-color: rgb(0, 77, 77);
