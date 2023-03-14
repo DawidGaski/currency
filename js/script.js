@@ -3,6 +3,7 @@
         const rateJPY = 0.034;
         const rateUSD = 4.33;
         const rateEUR = 4.69;
+        
         switch (currency) {
             case "JPY":
                 return sum / rateJPY;
